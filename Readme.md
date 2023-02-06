@@ -7,7 +7,7 @@ contributors:
 
 # Cairo
 
-Cairo is a Turing-complete language that allows you write provable programs
+Cairo is a Turing-complete language that allows you to write provable programs
 (where one party can prove to another that a certain computation was executed
 correctly) on StarkNet.
 
@@ -146,7 +146,7 @@ First let's look at a default contract that comes with Protostar which allows
 you to set balance on deployment, increase, and get the balance.
 
 ```cairo
-// Language directive - instructs compiler its a StarkNet contract
+// Language directive - instructs compiler it's a StarkNet contract
 %lang starknet
 
 // Library imports from the Cairo-lang library
@@ -201,7 +201,7 @@ NB: You should be at `main.cairo` if you are using Protostar.
 Unlike solidity, where you have access to various data types, Cairo comes with
 just a single data type `..felts`. Felts stands for Field elements, and are a
 252 bit integer in the range `0<=x<=P` where `P` is a prime number. You can
-create a `Uint256` in Cairo by utlizing a struct of two 128 bits felts.
+create a `Uint256` in Cairo by utilizing a struct of two 128 bits felts.
 
 ```cairo
 struct Uint256{
@@ -246,7 +246,7 @@ from starkware.cairo.common.bool import TRUE
   func names() -> (name: felt){}
   ```
 
-+ Storage mappings: Unlike soldity where mappings have a separate keyword, in
++ Storage mappings: Unlike solidity where mappings have a separate keyword, in
   Cairo you create mappings using storage variables.
 
   ```cairo
@@ -269,7 +269,7 @@ from starkware.cairo.common.bool import TRUE
 
 + Constants: Constants are fixed and as such can't be altered after being set.
   They evaluate to an integer (field element) at compile time. To create a
-  constant in Cairo, you use the `const` keyword. Its proper practice to
+  constant in Cairo, you use the `const` keyword. It's proper practice to
   capitalize constant names.
 
   ```cairo
@@ -277,7 +277,7 @@ from starkware.cairo.common.bool import TRUE
   ```
 
 + Arrays: Arrays can be defined as a `pointer(felt*)` to the first element of
-  the array. As an array is populated, its elements take up contigous memory
+  the array. As an array is populated, its elements take up contiguous memory
   cells. The `alloc` keyword can be used to dynamically allocate a new memory
   segment, which can be used to store an array:
 
@@ -289,7 +289,7 @@ from starkware.cairo.common.bool import TRUE
   ```
 
   You can also use the `new` operator to create fixed-size arrays using
-  tuples. The new operator is useful as it enables you allocate memory and
+  tuples. The new operator is useful as it enables you to allocate memory and
   initialize the object in one instruction
 
   ```cairo
@@ -308,7 +308,7 @@ from starkware.cairo.common.bool import TRUE
   local tuple0: (felt, felt, felt) = (7, 9, 13);
   ```
 
-+ Events: Events allows a contract emit information during the course of its
++ Events: Events allow a contract to emit information during the course of its
   execution, that can be used outside of StarkNet. An event can be created,
   subsequently emitted:
 
@@ -321,7 +321,7 @@ from starkware.cairo.common.bool import TRUE
 
 ### 4. Constructors, External and View functions
 
-+ Constructors: Constructors are a way to intialize state variables on
++ Constructors: Constructors are a way to initialize state variables on
   contract deployment. You create a constructor using the `@constructor`
   decorator.
 
@@ -335,7 +335,7 @@ from starkware.cairo.common.bool import TRUE
   }
   ```
 
-+ External functions: External functions are functions that modifies the state
++ External functions: External functions are functions that modify the state
   of the network. You create an external function using the `@external`
   decorator:
 
@@ -596,7 +596,7 @@ func double_balance{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*,
 ## Full Contract Example
 
 Below is a simple automated market maker contract example that implements most
-of what we just learnt! Re-write, deploy, have fun!
+of what we just learned! Re-write, deploy, have fun!
 
 ```cairo
 %lang starknet
